@@ -1,0 +1,23 @@
+<aura:component description="BoardPanel" implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="gameOptions" type="List" default="[
+                                {'label': 'Easy', 'value': 'easy'},
+                                {'label': 'Medium', 'value': 'medium'},
+                                {'label': 'Hard', 'value': 'hard'},
+                                ]"/>
+
+    <aura:attribute name="comboUpdated" type="boolean" default="false"></aura:attribute>
+    <aura:attribute name="selectedMode" type="string"/>
+    <lightning:card  title="Word Shuffle">
+        <lightning:layout multipleRows="true"  verticalAlign="center">
+            <lightning:layoutItem padding="around-small" size="4">
+                <lightning:combobox aura:id="gameMode" name="gameMode" label="Game Mode" options="{!v.gameOptions}" variant="label-inline" value="easy" placeholder="Select an Option"  />
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <lightning:button variant="brand" label="Start Game" title="Start Game" onclick="{!c.startGame}" />
+            </lightning:layoutItem>
+        </lightning:layout>
+    </lightning:card>
+    <aura:if isTrue="{!(v.selectedMode != null)}">
+        <c:Board mode="{!v.selectedMode}" aura:id="board"></c:Board>
+    </aura:if>
+</aura:component>

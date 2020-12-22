@@ -1,0 +1,18 @@
+<aura:component description="GameResult" controller="GameResultController" implements="flexipage:availableForAllPageTypes">
+    <!-- attributes -->
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }"/>
+    <aura:handler event="c:ResultApplicationEvent" action="{!c.updateResultsHandler}"></aura:handler>
+
+    <!-- the container element determine the height of the datatable -->
+    <div style="height: 300px">
+        <lightning:datatable
+                keyField="id"
+                data="{! v.data }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="true"/>
+    </div>
+</aura:component>

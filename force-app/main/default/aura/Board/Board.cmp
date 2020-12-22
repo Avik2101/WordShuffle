@@ -1,0 +1,38 @@
+<aura:component description="Board" controller="BoardController" implements="flexipage:availableForAllPageTypes">
+
+    <!-- Methods and Handlers -->
+    <aura:method name="refreshBoard" action="{!c.refreshBoard}"></aura:method>
+    <aura:handler name="onClick" event="c:BlockClickEvent" action="{!c.blockClickHandler}"></aura:handler>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"></aura:handler>
+
+    <!-- Attributes -->
+    <aura:attribute name="randomWord" type="string"></aura:attribute>
+    <aura:attribute name="clickCount" type="integer" default="0"></aura:attribute>
+    <aura:attribute name="mode" type="string" default="easy"></aura:attribute>
+    <aura:attribute name="words" type="list" access="private" ></aura:attribute>
+    <aura:attribute name="padSize" type="integer" access="private" default="0"></aura:attribute>
+    <aura:attribute name="result" type="string" access="private"></aura:attribute>
+    <aura:attribute name="isDisabled" type="boolean" access="private" default="false"></aura:attribute>
+
+    <div class="slds-card slds-p-around_medium">
+        <lightning:layout>
+            <lightning:layoutItem padding="around-small" size="4" class="slds-align_absolute-center">
+                <div class="slds-text-heading_large slds-text-title_bold">Word Selected :</div> <div class="slds-text-title_caps">{!v.randomWord}</div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small" size="4">
+                <div class="slds-text-heading_large slds-text-title_bold">Moves Left :   {! (3 - v.clickCount)}</div>
+            </lightning:layoutItem>
+
+            <aura:if isTrue="{!v.isDisabled}">
+                <div class="board-disabled"></div>
+            </aura:if>
+        </lightning:layout>
+        <lightning:layout multipleRows="true">
+            <aura:iteration items="{!v.words}" var="word">
+                <lightning:layoutItem padding="around-small" size="{!v.padSize}">
+                    <c:Block wordLabel="{!word}"></c:Block>
+                </lightning:layoutItem>
+            </aura:iteration>
+        </lightning:layout>
+    </div>
+</aura:component>

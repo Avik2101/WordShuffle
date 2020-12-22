@@ -1,6 +1,7 @@
 {
   "orgName": "Avik Company",
   "edition": "Developer",
+  "hasSampleData": false,
   "features": [],
   "settings": {
     "lightningExperienceSettings": {

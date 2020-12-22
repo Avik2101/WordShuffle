@@ -12,7 +12,6 @@
     <navType>Console</navType>
     <tabs>Word_Shuffle</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>Word_Shuffle_UtilityBar</utilityBar>
     <workspaceConfig>
         <mappings>
             <tab>Word_Shuffle</tab>

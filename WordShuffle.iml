@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <module type="IlluminatedCloud" version="4">
   <component name="FacetManager">
     <facet type="IlluminatedCloud" name="Illuminated Cloud">
       <configuration>
-        <option name="connectionName" value="DevHub" />
-        <option name="connectionType" value="OAUTH" />
+        <option name="connectionName" value="Word_Shuffle_SO" />
+        <option name="connectionType" value="SFDX" />
         <option name="defaultSourceRootUrl" value="file://$MODULE_DIR$/force-app/main/default" />
         <option name="moduleContents">
           <ModuleContents>
@@ -22,7 +22,7 @@
       <sourceFolder url="file://$MODULE_DIR$/force-app/main/default" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/manifest" type="java-resource" />
     </content>
-    <orderEntry type="jdk" jdkName="IlluminatedCloud (WordShuffle/DevHub)" jdkType="IlluminatedCloud" />
+    <orderEntry type="jdk" jdkName="IlluminatedCloud (WordShuffle/Word_Shuffle_SO)" jdkType="IlluminatedCloud" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
